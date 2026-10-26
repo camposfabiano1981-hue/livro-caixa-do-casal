@@ -1391,11 +1391,12 @@ async function exportarXLSX() {
   const buf = X.write(wb, { bookType: 'xlsx', type: 'array' });
   baixar(`livro-caixa-${new Date().toISOString().slice(0, 10)}.xlsx`, new Uint8Array(buf), false);
 }
+const qtd = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 async function restaurar(file) {
   let dados; try { dados = JSON.parse(await file.text()); } catch { toast('Arquivo inválido.'); return; }
   if (!dados || dados.app !== 'livro-caixa-do-casal' || !Array.isArray(dados.series)) { toast('Este arquivo não é um backup do Livro-Caixa.'); return; }
   S.sheet = { kind: 'restaurar', dados };
-  abrirFolha('Restaurar backup', `<p>Substituir os dados atuais por este backup?</p><p class="sub">Backup de ${esc(String(dados.exportadoEm || '').slice(0, 10))}: ${dados.series.length} lançamentos, ${(dados.metas || []).length} metas e ${(dados.aportes || []).length} aportes. Os dados de agora serão apagados.</p><p class="hint" id="r-prog"></p>`,
+  abrirFolha('Restaurar backup', `<p>Substituir os dados atuais por este backup?</p><p class="sub">Backup de ${esc(String(dados.exportadoEm || '').slice(0, 10))}: ${qtd(dados.series.length, 'lançamento', 'lançamentos')}, ${qtd((dados.metas || []).length, 'meta', 'metas')} e ${qtd((dados.aportes || []).length, 'aporte', 'aportes')}. Os dados de agora serão apagados.</p><p class="hint" id="r-prog"></p>`,
     `<button type="button" class="btn" data-act="fechar">Cancelar</button><button type="button" class="btn dng" data-act="restaurar-ok">Substituir</button>`);
 }
 async function substituirTudo(dados) {
