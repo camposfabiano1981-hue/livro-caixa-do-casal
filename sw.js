@@ -5,7 +5,7 @@
  * - Firebase (login e banco) passa direto: os lançamentos sem internet ficam no cache do próprio Firestore.
  * A versão abaixo acompanha a de index.html: ao publicar, o navegador instala este arquivo novo e limpa o cache antigo.
  */
-const VERSAO = '2026.10.26.1';
+const VERSAO = '2026.10.26.2';
 const CACHE = 'livro-caixa-' + VERSAO;
 const CDNS = ['www.gstatic.com', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com', 'cdn.jsdelivr.net'];
 
