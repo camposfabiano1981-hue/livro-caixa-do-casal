@@ -1,0 +1,27 @@
+{
+  "name": "Livro-Caixa do Casal",
+  "short_name": "Livro-Caixa",
+  "description": "Finanças do casal: painel, lançamentos do mês, faturas e acerto entre os dois, planilha, parcelamentos, metas e simulador de compras.",
+  "id": "./",
+  "start_url": "./#painel",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "background_color": "#edf2ee",
+  "theme_color": "#edf2ee",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    { "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icones/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icones/icone-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icones/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icones/icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Novo lançamento", "url": "./#novo", "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192" }] },
+    { "name": "Lançamentos do mês", "url": "./#lanc", "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192" }] },
+    { "name": "Planilha", "url": "./#plan", "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192" }] }
+  ]
+}

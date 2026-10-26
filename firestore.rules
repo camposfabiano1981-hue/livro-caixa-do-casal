@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Livro-Caixa do Casal: só estes e-mails (login Google verificado) leem e gravam os lançamentos.
+    // Troque pelos dois e-mails Google do casal antes de publicar (o app gera este texto em Ajustes › Conta › Regras).
+    match /livros/{livro}/{documento=**} {
+      allow read, write: if request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.lower() in ['seu-email@gmail.com', 'conjuge@gmail.com'];
+    }
+  }
+}

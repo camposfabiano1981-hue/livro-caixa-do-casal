@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testes · Livro-Caixa do Casal</title>
+<style>
+  body { font: 15px/1.45 system-ui, sans-serif; margin: 24px; color: #14222a; background: #fbfcfb; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  #resumo { font-weight: 700; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 6px 0; border-bottom: 1px solid #d9e1db; }
+  .ok::before { content: "✓ "; color: #0a7a2f; font-weight: 700; }
+  .falha { color: #b3261e; font-weight: 600; }
+  .falha::before { content: "✗ "; }
+  code { font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>Testes do Livro-Caixa do Casal</h1>
+<p>Conferem as contas do app com dados fictícios: valores digitados, meses, divisão do casal, transferências, itens em espera, acerto, parcelas e saldo acumulado.</p>
+<p id="resumo">Rodando…</p>
+<ul id="lista"></ul>
+<script>window.LCC_TESTE = {};</script>
+<script src="../js/app.js"></script>
+<script src="tests.js"></script>
+</body>
+</html>

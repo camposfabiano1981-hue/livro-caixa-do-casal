@@ -1,0 +1,8 @@
+# Backups e exportações com dados financeiros do casal: nunca vão para o repositório
+*.backup.json
+livro-caixa-backup-*.json
+livro-caixa-*.xlsx
+livro-caixa-lancamentos-*.csv
+dados/
+node_modules/
+.DS_Store
