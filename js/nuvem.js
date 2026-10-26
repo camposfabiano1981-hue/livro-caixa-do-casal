@@ -83,8 +83,8 @@
     const T = {
       'auth/popup-closed-by-user': 'A janela do Google foi fechada antes de concluir o login.',
       'auth/cancelled-popup-request': 'O login foi cancelado. Tente de novo.',
-      'auth/unauthorized-domain': `Este endereço (${location.hostname}) não está autorizado no Firebase. Em Authentication › Configurações › Domínios autorizados, adicione-o.`,
-      'auth/operation-not-allowed': 'O login com Google não está ativado. Em Authentication › Método de login, ative o Google.',
+      'auth/unauthorized-domain': `Este endereço (${location.hostname}) não está autorizado no Firebase. Em Segurança › Authentication › Configurações › Domínios autorizados, adicione-o.`,
+      'auth/operation-not-allowed': 'O login com Google não está ativado. Em Segurança › Authentication › Método de login, ative o Google.',
       'auth/network-request-failed': 'Sem internet para entrar. Verifique a conexão.',
       'auth/invalid-api-key': 'A chave da API do firebaseConfig está errada. Cole a configuração de novo.',
       'auth/api-key-not-valid.-please-pass-a-valid-api-key.': 'A chave da API do firebaseConfig está errada. Cole a configuração de novo.',
@@ -98,10 +98,10 @@
       <div><h1 class="ct" style="font-size:20px">Conectar ao Firebase</h1><p class="sub">Os lançamentos ficam no Cloud Firestore do seu projeto Firebase (plano gratuito). Faça uma vez e use o mesmo projeto nos dois celulares e no computador.</p></div>
       <ol>
         <li>Abra <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console.firebase.google.com</a> e crie um projeto (por exemplo, <code>livro-caixa-casal</code>). O Google Analytics pode ficar desligado.</li>
-        <li><b>Authentication › Método de login</b>: ative o <b>Google</b>.</li>
-        <li><b>Authentication › Configurações › Domínios autorizados</b>: adicione <code>${esc(location.hostname || 'o endereço do app')}</code>.</li>
-        <li><b>Firestore Database</b>: crie o banco no modo de produção (local <code>southamerica-east1</code>, São Paulo).</li>
-        <li><b>Configurações do projeto › Seus apps</b>: adicione um app da Web (<code>&lt;/&gt;</code>) e copie o objeto <code>firebaseConfig</code>.</li>
+        <li>No menu da esquerda, <b>Segurança › Authentication</b>: toque em <b>Vamos começar</b>, abra <b>Método de login</b> e ative o <b>Google</b>.</li>
+        <li>Ainda em Authentication, aba <b>Configurações › Domínios autorizados</b>: adicione <code>${esc(location.hostname || 'o endereço do app')}</code>.</li>
+        <li><b>Bancos de dados e armazenamento › Firestore</b>: crie o banco (edição Standard, local <code>southamerica-east1</code> São Paulo, modo de produção).</li>
+        <li><b>Configurações do projeto › Geral › Seus aplicativos</b>: toque em <code>&lt;/&gt;</code> (Web), dê um apelido, toque em <b>Registrar app</b> e copie o objeto <code>firebaseConfig</code>.</li>
         <li>Cole abaixo e toque em <b>Salvar e continuar</b>. Para valer em todos os aparelhos sem colar de novo, publique-o em <code>js/nuvem-config.js</code>.</li>
       </ol>
       <div class="fld"><label for="nv-cfg">firebaseConfig</label><textarea id="nv-cfg" rows="9" spellcheck="false" placeholder="const firebaseConfig = {&#10;  apiKey: &quot;...&quot;,&#10;  authDomain: &quot;...&quot;,&#10;  projectId: &quot;...&quot;,&#10;  ...&#10;};">${atual && trocando ? esc(JSON.stringify(atual, null, 2)) : ''}</textarea></div>
@@ -148,7 +148,7 @@
       <div class="row2"><div class="fld"><label for="nv-e1">Seu e-mail Google</label><input id="nv-e1" class="inp" type="email" value="${esc(meu)}" autocomplete="email"></div><div class="fld"><label for="nv-e2">E-mail Google da outra pessoa</label><input id="nv-e2" class="inp" type="email" value="${esc(outro)}" placeholder="conjuge@gmail.com" autocomplete="off"></div></div>
       <div class="fld"><label for="nv-regras">Regras</label><textarea id="nv-regras" rows="13" readonly spellcheck="false"></textarea></div>
       <ol>
-        <li>No <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console do Firebase</a>, abra <b>Firestore Database › Regras</b>.</li>
+        <li>No <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console do Firebase</a>, abra <b>Bancos de dados e armazenamento › Firestore</b> e a aba <b>Regras</b>.</li>
         <li>Apague o conteúdo, cole as regras e toque em <b>Publicar</b>.</li>
         <li>Volte aqui e toque em <b>Já publiquei</b>. A outra pessoa entra no mesmo endereço com a conta Google dela.</li>
       </ol>

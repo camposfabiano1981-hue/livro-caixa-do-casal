@@ -42,12 +42,12 @@ Abra o endereço e use **Instalar app** (Chrome/Edge) ou **Compartilhar › Adic
 
 ### Configurar o Firebase (uma vez)
 1. Em [console.firebase.google.com](https://console.firebase.google.com/), crie um projeto (ex.: `livro-caixa-casal`). O Google Analytics pode ficar desligado.
-2. **Authentication › Método de login**: ative o **Google**.
-3. **Authentication › Configurações › Domínios autorizados**: adicione o domínio do app (ex.: `seu-usuario.github.io`).
-4. **Firestore Database**: crie o banco no modo de produção (local `southamerica-east1`, São Paulo).
-5. **Configurações do projeto › Seus apps**: adicione um app da Web (`</>`) e copie o objeto `firebaseConfig`.
+2. **Segurança › Authentication › Método de login**: ative o **Google**.
+3. **Segurança › Authentication › Configurações › Domínios autorizados**: adicione o domínio do app (ex.: `seu-usuario.github.io`).
+4. **Bancos de dados e armazenamento › Firestore**: crie o banco (edição Standard, local `southamerica-east1` São Paulo, modo de produção).
+5. **Configurações do projeto › Geral › Seus aplicativos**: toque em `</>` (Web), registre o app e copie o objeto `firebaseConfig`.
 6. Cole a configuração na tela do app **ou** publique-a em `js/nuvem-config.js` para valer em todos os aparelhos sem colar de novo (ela não é senha: o acesso é protegido pelo login e pelas regras).
-7. Entre com Google. O app mostra as **regras do Firestore** com o seu e-mail e o da outra pessoa: copie, cole em **Firestore Database › Regras** e publique. O modelo também está em [`firestore.rules`](firestore.rules).
+7. Entre com Google. O app mostra as **regras do Firestore** com o seu e-mail e o da outra pessoa: copie, cole em **Firestore › Regras** e publique. O modelo também está em [`firestore.rules`](firestore.rules).
 
 ### Dados iniciais
 Em **Ajustes › Backup e exportação › Restaurar backup** (ou no botão da tela inicial vazia), importe o arquivo `.json` de backup. Backups e exportações não vão para o repositório (veja `.gitignore`).
